@@ -60,6 +60,7 @@ forgotten:
       ABSPATH guard and DocBlock. Documented in `DEVELOPMENT.md §6`.
 - [x] Port the first feature: `hide_admin_bar` in
       `cleanup/includes/features/hide-admin-bar.php`.
+- [x] Port `howdy_text` in `cleanup/includes/features/howdy-text.php`.
 - [ ] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional

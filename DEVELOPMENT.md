@@ -421,7 +421,7 @@ sets the registry callback.
 | Done | Config key                | Source snippet                          | Notes                                                       |
 | ---- | ------------------------- | --------------------------------------- | ----------------------------------------------------------- |
 | [x]  | `hide_admin_bar`          | `admin-bar-hide.php`                    | Hides the front-end bar for everyone via one filter         |
-| [ ]  | `howdy_text`              | `admin-bar-howdy.php`                   | Greeting from config; escape with `esc_html()`              |
+| [x]  | `howdy_text`              | `admin-bar-howdy.php`                   | Greeting + display name, both escaped                       |
 | [ ]  | `admin_footer_text`       | `admin-footer.php`                      | Text or text+URL; escape with `esc_html()`/`esc_url()`      |
 | [ ]  | `auto_featured_image`     | `featured-image-auto.php`               | Skip autosaves, revisions, existing thumbnails              |
 | [ ]  | `remove_default_taxonomy` | `remove-default-taxonomy.php`           | New-site-only; orphans terms — confirm before enabling      |

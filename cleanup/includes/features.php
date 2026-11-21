@@ -18,6 +18,7 @@ namespace Cleanup;
 defined('ABSPATH') || exit;
 
 require_once __DIR__ . '/features/hide-admin-bar.php';
+require_once __DIR__ . '/features/howdy-text.php';
 
 /**
  * Return the feature registry.
@@ -33,7 +34,7 @@ function features(): array
         ],
         'howdy_text' => [
             'type' => 'string',
-            'callback' => null,
+            'callback' => __NAMESPACE__ . '\\howdy_text',
         ],
         'admin_footer_text' => [
             'type' => 'string|array',
