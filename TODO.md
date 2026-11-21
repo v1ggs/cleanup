@@ -48,7 +48,7 @@ forgotten:
 - `WordPress.NamingConventions.PrefixAllGlobals`, configured with the settled
   `Cleanup` / `cleanup_` prefix
 
-## First feature
+## Features
 
 - [x] Add the plugin header to `cleanup/cleanup.php`. No Text Domain and no
       `languages/` folder.
@@ -71,7 +71,7 @@ forgotten:
       `cleanup/includes/features/disable-gutenberg.php` (global styles merged).
 - [x] Port `remove_default_taxonomy` in
       `cleanup/includes/features/remove-default-taxonomy.php`.
-- [ ] Confirm the test structure once PHPUnit is set up.
+- [x] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional
 
