@@ -412,9 +412,15 @@ All source paths are relative to `snippets/`. The reference files are
 **references only**: rewrite each feature from scratch with WordPress APIs
 (§0), never paste it verbatim. Tick a row once the feature is ported.
 
+**Feature contract:** one file per feature in `cleanup/includes/features/`,
+kebab-case filename, one `snake_case` function in the `Cleanup` namespace,
+signature `function name(bool|string|array $value): void`, `ABSPATH` guard and
+DocBlock required. The file is required from `includes/features.php`, which
+sets the registry callback.
+
 | Done | Config key                | Source snippet                          | Notes                                                       |
 | ---- | ------------------------- | --------------------------------------- | ----------------------------------------------------------- |
-| [ ]  | `hide_admin_bar`          | `admin-bar-hide.php`                    | One `show_admin_bar` filter only; do not stack both modes   |
+| [x]  | `hide_admin_bar`          | `admin-bar-hide.php`                    | Hides the front-end bar for everyone via one filter         |
 | [ ]  | `howdy_text`              | `admin-bar-howdy.php`                   | Greeting from config; escape with `esc_html()`              |
 | [ ]  | `admin_footer_text`       | `admin-footer.php`                      | Text or text+URL; escape with `esc_html()`/`esc_url()`      |
 | [ ]  | `auto_featured_image`     | `featured-image-auto.php`               | Skip autosaves, revisions, existing thumbnails              |

@@ -17,6 +17,8 @@ namespace Cleanup;
 
 defined('ABSPATH') || exit;
 
+require_once __DIR__ . '/features/hide-admin-bar.php';
+
 /**
  * Return the feature registry.
  *
@@ -27,7 +29,7 @@ function features(): array
     return [
         'hide_admin_bar' => [
             'type' => 'bool',
-            'callback' => null,
+            'callback' => __NAMESPACE__ . '\\hide_admin_bar',
         ],
         'howdy_text' => [
             'type' => 'string',

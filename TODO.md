@@ -55,10 +55,11 @@ forgotten:
 - [x] Add the plugin header to `cleanup/cleanup.php`. No Text Domain and no
       `languages/` folder.
 - [x] Confirm PHPCS scope for `dev/`: linted locally, excluded from the zip.
-- [ ] Decide the file-level feature contract: file naming, function naming,
-      signature, return value and DocBlock shape. The registry already defines
-      each entry as `{ type, callback }`.
-- [ ] Port the first feature into `cleanup/includes/features/`.
+- [x] Decide the file-level feature contract: kebab-case filenames, snake_case
+      functions in `Cleanup`, `function name(bool|string|array $value): void`,
+      ABSPATH guard and DocBlock. Documented in `DEVELOPMENT.md §6`.
+- [x] Port the first feature: `hide_admin_bar` in
+      `cleanup/includes/features/hide-admin-bar.php`.
 - [ ] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional
