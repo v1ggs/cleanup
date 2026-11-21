@@ -11,9 +11,8 @@ update `DEVELOPMENT.md` if a rule changes.
 - [x] Add `composer test` and expand `composer check` to run PHPCS + tests.
 - [ ] Add `composer lint` if a separate syntax check becomes useful.
 - [x] Add feature tests for all eight config keys.
-- [ ] Add a CI workflow: PHP 8.2/8.3/8.4/8.5 × WordPress 7.x and current
-      stable; run `composer phpcs` and `composer audit` (plus lint/tests when
-      they exist).
+- [x] Add a CI workflow: PHP 8.2/8.3/8.4/8.5; runs `composer check` and
+      `composer audit`.
 - [x] Add a release packaging helper based on `DEVELOPMENT.md §8`:
       `dev/build-release.ps1`.
 - [ ] Add deployment scripting so a published fix can reach client sites

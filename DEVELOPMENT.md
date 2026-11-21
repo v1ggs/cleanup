@@ -371,11 +371,12 @@ These cover bugs found in the legacy snippets. Add the test with the feature:
 
 ### CI
 
-CI setup is in `TODO.md`; no workflow exists yet. Any future workflow and the
-local hooks must inspect tool output for failure markers on machines where
-devbox `.cmd` shims swallow child exit codes. Test runs must not modify the
-local WordPress database in a way that leaks into another suite — use isolated
-tables/prefixes per run.
+`.github/workflows/ci.yml` runs on pushes to `main` and on pull requests. It
+uses a PHP 8.2/8.3/8.4/8.5 matrix, installs Composer dependencies, runs
+`composer check` (PHPCS + PHPUnit) and `composer audit`. Tests use Brain Monkey,
+so no WordPress test library or database is needed in CI. Local hooks must
+inspect tool output for failure markers on machines where devbox `.cmd` shims
+swallow child exit codes.
 
 ## 6. WordPress compatibility and feature triage
 
