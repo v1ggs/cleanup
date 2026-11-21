@@ -23,12 +23,6 @@ defined('ABSPATH') || exit;
  */
 function config(): array
 {
-    static $config = null;
-
-    if (null !== $config) {
-        return $config;
-    }
-
     $config = [];
     $source = load_config_source();
 
