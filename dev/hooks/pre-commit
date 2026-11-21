@@ -1,0 +1,20 @@
+#!/bin/sh
+# Fast, offline gate. Runs the PHPCS ruleset over the project.
+# Uses php directly so it works even when composer is not on PATH.
+set -eu
+
+PHPCS=vendor/squizlabs/php_codesniffer/bin/phpcs
+
+if [ ! -f "$PHPCS" ]; then
+    echo "pre-commit hook: $PHPCS not found; run composer install" >&2
+    exit 1
+fi
+
+PHP=$(command -v php || command -v php.cmd || true)
+if [ -z "$PHP" ]; then
+    echo "pre-commit hook: php not found on PATH" >&2
+    exit 1
+fi
+
+echo "pre-commit: phpcs"
+"$PHP" "$PHPCS"

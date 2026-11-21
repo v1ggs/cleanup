@@ -1,0 +1,9 @@
+.vscode
+log
+logs
+vendor
+snippets/*
+wordpress/
+
+.env
+
