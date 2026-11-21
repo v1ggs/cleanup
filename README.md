@@ -76,6 +76,25 @@ Config resolution:
 | `disable_customizer`      | `bool`              | Fully removes the Customizer: core loading, admin UI, direct access and theme-screen links    |
 | `disable_gutenberg`       | `bool`              | Disables the block editor and removes its assets and global styles                            |
 
+### `admin_footer_text`
+
+Accepts a string or an array:
+
+```php
+// Plain text.
+'admin_footer_text' => 'Site name',
+
+// Text with a link. The URL is optional; without it, the text is plain.
+'admin_footer_text' => [
+    'text' => 'Site name',
+    'url'  => 'https://example.com',
+],
+```
+
+Both values are escaped: `text` with `esc_html()` and `url` with `esc_url()`.
+Links open in a new tab with `rel="noopener"`. An empty string or an empty
+`text` value leaves the default footer unchanged.
+
 > **For new websites only.** `remove_default_taxonomy` changes website structure
 > and can orphan existing terms. Enable it only before content exists.
 
