@@ -1,0 +1,27 @@
+# Changelog
+
+All notable changes to this project are documented here. Versions follow the
+plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
+
+## [Unreleased]
+
+### Added
+
+- Config loader for a flat, typed theme config file (`cleanup-config.php`),
+  with `CLEANUP_CONFIG` constant and `cleanup_defaults` filter fallbacks.
+- Feature registry in `cleanup/includes/features.php`.
+- `hide_admin_bar` — hides the front-end admin bar for everyone.
+- `howdy_text` — replaces the default admin-bar greeting.
+- `admin_footer_text` — replaces the admin footer with text or an optional link.
+- `auto_featured_image` — assigns the first attached image as the featured image.
+- `dequeue_frontend_jquery` — removes front-end jQuery, leaving admin jQuery intact.
+- `disable_customizer` — removes the submenu, admin-bar node and direct access.
+- `disable_gutenberg` — disables the block editor and removes block/global styles.
+- `remove_default_taxonomy` — detaches categories and tags from posts (new sites only).
+- Tracked Git hooks for PHPCS and Conventional Commits.
+- `SECURITY.md` and this changelog.
+
+### Fixed
+
+- Pre-commit hook now locates PHP in Git hook environments where devbox shims
+  are not on `PATH`.
