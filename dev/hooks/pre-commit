@@ -1,18 +1,39 @@
 #!/bin/sh
 # Fast, offline gate. Runs the PHPCS ruleset over the project.
-# Uses php directly so it works even when composer is not on PATH.
+# Finds PHP even when Git's hook PATH omits the devbox shims.
 set -eu
 
 PHPCS=vendor/squizlabs/php_codesniffer/bin/phpcs
+
+# PHPCS needs a temp dir; Git hook environments can omit these variables.
+# PHP on Windows needs a Windows-style path, so convert /tmp with cygpath.
+if [ -z "${TMP:-}" ] && [ -z "${TEMP:-}" ]; then
+    TMP=$(cygpath -w /tmp 2>/dev/null || echo 'C:/Windows/Temp')
+    TEMP=$TMP
+fi
+TMPDIR=${TMPDIR:-${TMP:-${TEMP:-/tmp}}}
+export TMPDIR TMP TEMP
 
 if [ ! -f "$PHPCS" ]; then
     echo "pre-commit hook: $PHPCS not found; run composer install" >&2
     exit 1
 fi
 
-PHP=$(command -v php || command -v php.cmd || true)
+PHP=''
+for candidate in \
+    "$(command -v php 2>/dev/null || true)" \
+    "$(command -v php.cmd 2>/dev/null || true)" \
+    "$HOME/.devbox-pro/cli/php.cmd" \
+    "$HOME/AppData/Roaming/devbox-pro/resources/php/"*/win/php.exe
+do
+    if [ -n "$candidate" ] && [ -f "$candidate" ]; then
+        PHP=$candidate
+        break
+    fi
+done
+
 if [ -z "$PHP" ]; then
-    echo "pre-commit hook: php not found on PATH" >&2
+    echo "pre-commit hook: php not found on PATH or in devbox locations" >&2
     exit 1
 fi
 
