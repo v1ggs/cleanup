@@ -33,9 +33,10 @@ directory.
 5. Add a test from `DEVELOPMENT.md §5` — the per-feature template plus any
    feature-specific regression case from the table.
 6. Run `composer check`. Do not report success until it passes.
-7. Update root `README.md`: add the new key to the feature table with its value
-   type, a one-line description, and any "new sites only" warning; add it to
-   the config example if that helps a developer get started.
+7. Update root `README.md` in **both** places: add the new key to the PHP config
+   example (with a value of the correct type) and to the feature table (with its
+   value type, a one-line description and any "new websites only" warning). The
+   example and the table must always contain the same keys.
 8. Once the feature is verified and documented, remove the processed file from
    `snippets/` and delete its row from the manifest in `DEVELOPMENT.md §6`.
    That keeps `snippets/` an inbox of unprocessed ideas, not an archive.

@@ -433,27 +433,34 @@ here only when a new source snippet is placed in `snippets/`.
 The Customizer is core functionality and is **not deprecated** — the installed
 WordPress 7.1.5 still provides the `customize_loaded_components` filter,
 `wp_admin_bar_customize_menu()` and `wp-admin/customize.php`. The WP 7.0/7.1/7.2
-field guides show no removal or API break. Avoid exact core line numbers in this
-document; they change between releases. Centralising the disable here is
-preferable to repeating it in every theme.
+field guides show no removal or API break. Centralising the disable here is
+preferable to repeating it in every theme. `cleanup/includes/features/disable-customizer.php`
+keeps a short core-symbol map (file names and function names, not line numbers)
+for manual rechecking when WordPress changes.
 
 `customize_loaded_components` alone is **not** a full disable — it only unloads
-the widgets and nav-menus components. A complete disable needs three parts:
+the widgets and nav-menus components. The implementation therefore does all of
+the following with core APIs, never CSS or JS:
 
-1. `remove_submenu_page( 'themes.php', 'customize.php' )` on `admin_menu`.
-2. `remove_node( 'customize' )` on `admin_bar_menu` at a **late priority**
-   (other plugins may re-add the link via `customize_register`; WP itself hides
-   it for block themes without such callbacks).
-3. On `admin_init`, guard direct `customize.php` access using the page slug and
+1. `remove_action( 'plugins_loaded', '_wp_customize_include' )` at plugin file
+   load, so `WP_Customize_Manager` never loads and `customize_register` never
+   fires. Core explicitly anticipates plugins unhooking Customizer callbacks.
+2. `remove_submenu_page( 'themes.php', 'customize.php' )` on `admin_menu`.
+3. `remove_node( 'customize' )` on `admin_bar_menu` at a **late priority**.
+4. On `admin_init`, guard direct `customize.php` access with `$pagenow` and
    `wp_safe_redirect()` to `home_url( '/' )`, then `exit`.
+5. Filter `wp_prepare_themes_for_js` to remove the `customize` action, and
+   `theme_action_links` to remove `preview`, stripping the hardcoded buttons
+   and links from the themes screens.
 
-Use **page slugs and admin-bar node IDs**, never CSS selectors — WP 7.2 replaced
-Dashicons with inline SVG icons in the admin bar and menu, which breaks
-selector-based hacks. No custom admin colour scheme or icon CSS may be added.
+Use **page slugs, node IDs and filter keys**, never CSS selectors — WP 7.2
+replaced Dashicons with inline SVG icons in the admin bar and menu. No custom
+admin colour scheme or icon CSS may be added.
 
-Keep the feature inert unless its config key is true, and add tests for all
-three parts: submenu removed, node removed even when another callback adds it,
-and direct `customize.php` redirected.
+Consequence to document for users: themes and plugins that register options via
+`customize_register` will not register them, so their Customizer UI disappears.
+Stored values remain in the database. Any code assuming the Customizer UI exists
+may need adjustment.
 
 ### Third-party code: license whitelist
 

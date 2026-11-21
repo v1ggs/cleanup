@@ -1,17 +1,21 @@
 # Cleanup
 
-A developer-oriented WordPress plugin for custom sites. It changes low-level
+A developer-oriented WordPress plugin for custom websites. It changes low-level
 WordPress behaviour through a single config file in the active theme.
 
 There is **no admin menu, no settings page, no saved options, no public
 endpoints and no front-end output**. With no config file present, the plugin is
 completely inert.
 
-> **A polite warning:** these switches change how WordPress behaves. If you are
-> not sure what a setting does, leave it out. Nothing here is required for a
-> normal site, and removing the key turns the feature off again.
+> These switches change how WordPress behaves. If you are not sure what a
+> setting does, leave it out. Nothing here is required for a normal website, and
+> removing the key turns the feature off again.
 
 Distributed on **GitHub only** — not in the WordPress.org directory.
+
+Built and tested for **classic themes** with the classic editor. Block themes
+and Full Site Editing are out of scope and untested; some features should still
+work, but the Site Editor is not disabled and Customizer availability differs.
 
 ## Requirements
 
@@ -36,13 +40,14 @@ plugins directory; the plugin itself is the `cleanup/` folder inside it.
 defined( 'ABSPATH' ) || exit;
 
 return [
-    'hide_admin_bar'         => true,
-    'howdy_text'             => 'Welcome',
-    'admin_footer_text'      => 'Site name',
-    'auto_featured_image'    => true,
-    'dequeue_frontend_jquery'=> true,
-    'disable_customizer'     => true,
-    'disable_gutenberg'      => true,
+    'hide_admin_bar'          => true,
+    'howdy_text'              => 'Welcome',
+    'admin_footer_text'       => 'Site name',
+    'auto_featured_image'     => true,
+    'remove_default_taxonomy' => false,  // for new websites only
+    'dequeue_frontend_jquery' => true,
+    'disable_customizer'      => true,
+    'disable_gutenberg'       => true,
 ];
 ```
 
@@ -60,27 +65,34 @@ Config resolution:
 
 ## Features
 
-| Config key                | Value                | What it does                                                        |
-| ------------------------- | -------------------- | ------------------------------------------------------------------- |
-| `hide_admin_bar`          | `bool`               | Hides the admin bar on the front end                                |
-| `howdy_text`              | `string`             | Replaces the default "Howdy" greeting in the admin bar              |
-| `admin_footer_text`       | `string` or `array`  | Replaces the admin footer text; array may contain `text` and `url`  |
-| `auto_featured_image`     | `bool`               | Sets the first attached image as the featured image on save         |
-| `remove_default_taxonomy` | `bool`               | Detaches categories and tags from posts — **new sites only**        |
-| `dequeue_frontend_jquery` | `bool`               | Removes front-end jQuery only; admin jQuery stays for CMB2          |
-| `disable_customizer`      | `bool`               | Removes the Customizer and blocks direct `customize.php` access     |
-| `disable_gutenberg`       | `bool`               | Disables the block editor and removes its assets and global styles  |
+| Config key                | Value               | What it does                                                                                  |
+| ------------------------- | ------------------- | --------------------------------------------------------------------------------------------- |
+| `hide_admin_bar`          | `bool`              | Hides the WordPress toolbar on the public website for logged-in users; wp-admin is unaffected |
+| `howdy_text`              | `string`            | Replaces the default "Howdy" greeting in the WordPress toolbar                                |
+| `admin_footer_text`       | `string` or `array` | Replaces the admin footer text; array may contain `text` and `url`                            |
+| `auto_featured_image`     | `bool`              | Sets the first attached image as the featured image on save                                   |
+| `remove_default_taxonomy` | `bool`              | Detaches categories and tags from posts. **For new websites only** (see note below)           |
+| `dequeue_frontend_jquery` | `bool`              | Removes jQuery from the public website; wp-admin keeps it for other plugins                   |
+| `disable_customizer`      | `bool`              | Fully removes the Customizer: core loading, admin UI, direct access and theme-screen links    |
+| `disable_gutenberg`       | `bool`              | Disables the block editor and removes its assets and global styles                            |
 
-`remove-default-taxonomy` changes site structure and can orphan existing
-terms. Enable it only before content exists.
+> **For new websites only.** `remove_default_taxonomy` changes website structure
+> and can orphan existing terms. Enable it only before content exists.
 
-## Security
+> **Note:** `disable_customizer` stops core from loading the Customizer, removes
+> the admin menu item, the admin-bar node, direct `customize.php` access, and
+> strips Customize/Live Preview links from the themes screens using core filters
+> — no CSS or JS is used to hide remnants. Because the Customizer never loads,
+> panels, sections and controls registered by themes or plugins via
+> `customize_register` do not run either. Their stored values remain in the
+> database, but any code that assumes the Customizer UI exists may need
+> adjustment. Full removal is possible in core (it even anticipates plugins
+> unhooking all `customize_register` actions).
 
-The plugin runs on real client sites, including production. It has no public
-attack surface, no front-end fingerprint, and no secrets in tracked files.
-Please report vulnerabilities privately using `SECURITY.md`.
+## Development notes (internal)
 
-## Development
+Mostly for my own reference. This is a personal project; external pull requests
+are not being accepted or reviewed right now.
 
 See `DEVELOPMENT.md` for the full rules: security policy, feature manifest,
 code style, tests, commits and releases.
