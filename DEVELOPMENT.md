@@ -422,7 +422,7 @@ sets the registry callback.
 | ---- | ------------------------- | --------------------------------------- | ----------------------------------------------------------- |
 | [x]  | `hide_admin_bar`          | `admin-bar-hide.php`                    | Hides the front-end bar for everyone via one filter         |
 | [x]  | `howdy_text`              | `admin-bar-howdy.php`                   | Greeting + display name, both escaped                       |
-| [ ]  | `admin_footer_text`       | `admin-footer.php`                      | Text or text+URL; escape with `esc_html()`/`esc_url()`      |
+| [x]  | `admin_footer_text`       | `admin-footer.php`                      | Plain text or optional link; both escaped                   |
 | [ ]  | `auto_featured_image`     | `featured-image-auto.php`               | Skip autosaves, revisions, existing thumbnails              |
 | [ ]  | `remove_default_taxonomy` | `remove-default-taxonomy.php`           | New-site-only; orphans terms — confirm before enabling      |
 | [ ]  | `dequeue_frontend_jquery` | `dequeue-jquery.php`                    | Front-end only — CMB2 needs jQuery in the admin             |

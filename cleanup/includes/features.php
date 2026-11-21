@@ -19,6 +19,7 @@ defined('ABSPATH') || exit;
 
 require_once __DIR__ . '/features/hide-admin-bar.php';
 require_once __DIR__ . '/features/howdy-text.php';
+require_once __DIR__ . '/features/admin-footer-text.php';
 
 /**
  * Return the feature registry.
@@ -38,7 +39,7 @@ function features(): array
         ],
         'admin_footer_text' => [
             'type' => 'string|array',
-            'callback' => null,
+            'callback' => __NAMESPACE__ . '\\admin_footer_text',
         ],
         'auto_featured_image' => [
             'type' => 'bool',
