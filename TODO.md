@@ -69,6 +69,8 @@ forgotten:
       `cleanup/includes/features/dequeue-frontend-jquery.php`.
 - [x] Port `disable_customizer` in
       `cleanup/includes/features/disable-customizer.php`.
+- [x] Port `disable_gutenberg` in
+      `cleanup/includes/features/disable-gutenberg.php` (global styles merged).
 - [ ] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional

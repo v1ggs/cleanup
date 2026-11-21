@@ -23,6 +23,7 @@ require_once __DIR__ . '/features/admin-footer-text.php';
 require_once __DIR__ . '/features/auto-featured-image.php';
 require_once __DIR__ . '/features/dequeue-frontend-jquery.php';
 require_once __DIR__ . '/features/disable-customizer.php';
+require_once __DIR__ . '/features/disable-gutenberg.php';
 
 /**
  * Return the feature registry.
@@ -62,7 +63,7 @@ function features(): array
         ],
         'disable_gutenberg' => [
             'type' => 'bool',
-            'callback' => null,
+            'callback' => __NAMESPACE__ . '\\disable_gutenberg',
         ],
     ];
 }

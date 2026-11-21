@@ -427,7 +427,7 @@ sets the registry callback.
 | [ ]  | `remove_default_taxonomy` | `remove-default-taxonomy.php`           | New-site-only; orphans terms — confirm before enabling      |
 | [x]  | `dequeue_frontend_jquery` | `dequeue-jquery.php`                    | Front-end only; admin jQuery untouched for CMB2             |
 | [x]  | `disable_customizer`      | *write new*                             | Submenu, admin-bar node and direct URL guard                |
-| [ ]  | `disable_gutenberg`       | `editor-disable.php` + `dequeue-global-styles.php` | Block editor off; also remove global styles       |
+| [x]  | `disable_gutenberg`       | `editor-disable.php` + `dequeue-global-styles.php` | Block editor off; styles and global styles removed |
 
 Out-of-scope snippets were deleted from the local inbox. Do not reintroduce one
 without adding it to this manifest first.
