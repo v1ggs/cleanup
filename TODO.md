@@ -67,6 +67,8 @@ forgotten:
       `cleanup/includes/features/auto-featured-image.php`.
 - [x] Port `dequeue_frontend_jquery` in
       `cleanup/includes/features/dequeue-frontend-jquery.php`.
+- [x] Port `disable_customizer` in
+      `cleanup/includes/features/disable-customizer.php`.
 - [ ] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional

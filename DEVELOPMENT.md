@@ -426,7 +426,7 @@ sets the registry callback.
 | [x]  | `auto_featured_image`     | `featured-image-auto.php`               | Skips autosaves, revisions, existing thumbnails             |
 | [ ]  | `remove_default_taxonomy` | `remove-default-taxonomy.php`           | New-site-only; orphans terms — confirm before enabling      |
 | [x]  | `dequeue_frontend_jquery` | `dequeue-jquery.php`                    | Front-end only; admin jQuery untouched for CMB2             |
-| [ ]  | `disable_customizer`      | *write new*                             | Full disable via `customize_loaded_components` + guard      |
+| [x]  | `disable_customizer`      | *write new*                             | Submenu, admin-bar node and direct URL guard                |
 | [ ]  | `disable_gutenberg`       | `editor-disable.php` + `dequeue-global-styles.php` | Block editor off; also remove global styles       |
 
 Out-of-scope snippets were deleted from the local inbox. Do not reintroduce one
