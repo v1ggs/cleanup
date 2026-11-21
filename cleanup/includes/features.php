@@ -21,6 +21,7 @@ require_once __DIR__ . '/features/hide-admin-bar.php';
 require_once __DIR__ . '/features/howdy-text.php';
 require_once __DIR__ . '/features/admin-footer-text.php';
 require_once __DIR__ . '/features/auto-featured-image.php';
+require_once __DIR__ . '/features/dequeue-frontend-jquery.php';
 
 /**
  * Return the feature registry.
@@ -52,7 +53,7 @@ function features(): array
         ],
         'dequeue_frontend_jquery' => [
             'type' => 'bool',
-            'callback' => null,
+            'callback' => __NAMESPACE__ . '\\dequeue_frontend_jquery',
         ],
         'disable_customizer' => [
             'type' => 'bool',

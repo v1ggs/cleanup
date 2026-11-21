@@ -425,7 +425,7 @@ sets the registry callback.
 | [x]  | `admin_footer_text`       | `admin-footer.php`                      | Plain text or optional link; both escaped                   |
 | [x]  | `auto_featured_image`     | `featured-image-auto.php`               | Skips autosaves, revisions, existing thumbnails             |
 | [ ]  | `remove_default_taxonomy` | `remove-default-taxonomy.php`           | New-site-only; orphans terms — confirm before enabling      |
-| [ ]  | `dequeue_frontend_jquery` | `dequeue-jquery.php`                    | Front-end only — CMB2 needs jQuery in the admin             |
+| [x]  | `dequeue_frontend_jquery` | `dequeue-jquery.php`                    | Front-end only; admin jQuery untouched for CMB2             |
 | [ ]  | `disable_customizer`      | *write new*                             | Full disable via `customize_loaded_components` + guard      |
 | [ ]  | `disable_gutenberg`       | `editor-disable.php` + `dequeue-global-styles.php` | Block editor off; also remove global styles       |
 

@@ -65,6 +65,8 @@ forgotten:
       `cleanup/includes/features/admin-footer-text.php`.
 - [x] Port `auto_featured_image` in
       `cleanup/includes/features/auto-featured-image.php`.
+- [x] Port `dequeue_frontend_jquery` in
+      `cleanup/includes/features/dequeue-frontend-jquery.php`.
 - [ ] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional
