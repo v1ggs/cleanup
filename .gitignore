@@ -1,6 +1,7 @@
 .vscode
 log
 logs
+dist
 vendor
 snippets/*
 wordpress/

@@ -14,12 +14,11 @@ update `DEVELOPMENT.md` if a rule changes.
 - [ ] Add a CI workflow: PHP 8.2/8.3/8.4/8.5 × WordPress 7.x and current
       stable; run `composer phpcs` and `composer audit` (plus lint/tests when
       they exist).
-- [ ] Add a release packaging helper / `.distignore` equivalent based on the
-      ship list in `DEVELOPMENT.md §8`.
+- [x] Add a release packaging helper based on `DEVELOPMENT.md §8`:
+      `dev/build-release.ps1`.
 - [ ] Add deployment scripting so a published fix can reach client sites
       quickly.
-- [ ] Create the remaining root release files: `SECURITY.md`, `CHANGELOG.md`.
-      `LICENSE` and `THIRD-PARTY-NOTICES.md` already exist inside `cleanup/`.
+- [x] Create the remaining root release files: `SECURITY.md`, `CHANGELOG.md`.
 
 ## PHPCS backlog
 

@@ -20,6 +20,8 @@ plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
 - `remove_default_taxonomy` — detaches categories and tags from posts (new sites only).
 - Tracked Git hooks for PHPCS and Conventional Commits.
 - `SECURITY.md` and this changelog.
+- Release packaging helper (`dev/build-release.ps1`) that builds a zip from
+  the `cleanup/` folder only.
 
 ### Fixed
 

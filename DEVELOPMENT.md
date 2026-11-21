@@ -558,11 +558,17 @@ whether anything was pushed.
 - Use the `release-cleanup` skill for the full workflow.
 - GitHub Releases only: tag `v*.*.*`, attach a built zip, no WP.org SVN.
 - Build the zip from the **`cleanup/` plugin folder**, not the repository root.
-  Run `composer install --no-dev` first, then stage only the contents of
-  `cleanup/`: `cleanup.php`, `includes/`, `LICENSE`, `THIRD-PARTY-NOTICES.md`.
-  Never include root docs, `dev/`, `snippets/`, `tests/`, WordPress core,
-  `vendor/` or Composer files. Keep `README.md`, `CHANGELOG.md` and
-  `SECURITY.md` on GitHub only.
+  Run `composer install --no-dev` first, then run:
+
+  ```powershell
+  powershell -ExecutionPolicy Bypass -File .\dev\build-release.ps1
+  ```
+
+  The helper stages only `cleanup.php`, `includes/`, `LICENSE` and
+  `THIRD-PARTY-NOTICES.md`, then writes `dist/cleanup-vX.Y.Z.zip`. Never include
+  root docs, `dev/`, `snippets/`, `tests/`, WordPress core, `vendor/` or
+  Composer files. Keep `README.md`, `CHANGELOG.md` and `SECURITY.md` on GitHub
+  only.
 - Keep the plugin header `Version:` in sync with the tag. Do not bump by hand
   outside a release.
 - `SECURITY.md` documents how to report a vulnerability privately.
