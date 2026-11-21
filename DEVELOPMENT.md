@@ -406,31 +406,19 @@ So `snippets/` only ever contains unprocessed input, and the manifest is a
 to-do list rather than an archive. Source paths in it are local-only and will
 not exist in a fresh clone.
 
-### Feature manifest — copy checklist
+### Feature contract
 
-All source paths are relative to `snippets/`. The reference files are
-**references only**: rewrite each feature from scratch with WordPress APIs
-(§0), never paste it verbatim. Tick a row once the feature is ported.
+One file per feature in `cleanup/includes/features/`, kebab-case filename, one
+`snake_case` function in the `Cleanup` namespace, signature
+`function name(bool|string|array $value): void`, `ABSPATH` guard and DocBlock
+required. The file is required from `includes/features.php`, which sets the
+registry callback.
 
-**Feature contract:** one file per feature in `cleanup/includes/features/`,
-kebab-case filename, one `snake_case` function in the `Cleanup` namespace,
-signature `function name(bool|string|array $value): void`, `ABSPATH` guard and
-DocBlock required. The file is required from `includes/features.php`, which
-sets the registry callback.
+### Feature manifest
 
-| Done | Config key                | Source snippet                          | Notes                                                       |
-| ---- | ------------------------- | --------------------------------------- | ----------------------------------------------------------- |
-| [x]  | `hide_admin_bar`          | `admin-bar-hide.php`                    | Hides the front-end bar for everyone via one filter         |
-| [x]  | `howdy_text`              | `admin-bar-howdy.php`                   | Greeting + display name, both escaped                       |
-| [x]  | `admin_footer_text`       | `admin-footer.php`                      | Plain text or optional link; both escaped                   |
-| [x]  | `auto_featured_image`     | `featured-image-auto.php`               | Skips autosaves, revisions, existing thumbnails             |
-| [x]  | `remove_default_taxonomy` | `remove-default-taxonomy.php`           | New-site only; detaches category and post_tag from posts    |
-| [x]  | `dequeue_frontend_jquery` | `dequeue-jquery.php`                    | Front-end only; admin jQuery untouched for CMB2             |
-| [x]  | `disable_customizer`      | *write new*                             | Submenu, admin-bar node and direct URL guard                |
-| [x]  | `disable_gutenberg`       | `editor-disable.php` + `dequeue-global-styles.php` | Block editor off; styles and global styles removed |
-
-Out-of-scope snippets were deleted from the local inbox. Do not reintroduce one
-without adding it to this manifest first.
+All eight planned features have been ported and their processed snippets
+deleted from the local inbox. The manifest is therefore empty; add a new row
+here only when a new source snippet is placed in `snippets/`.
 
 ### Build notes: `disable_customizer`
 
