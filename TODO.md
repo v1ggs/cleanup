@@ -10,7 +10,7 @@ update `DEVELOPMENT.md` if a rule changes.
       `tests/bootstrap.php` and `tests/TestCase.php`. No WP test library needed.
 - [x] Add `composer test` and expand `composer check` to run PHPCS + tests.
 - [ ] Add `composer lint` if a separate syntax check becomes useful.
-- [ ] Add remaining feature tests for all eight config keys.
+- [x] Add feature tests for all eight config keys.
 - [ ] Add a CI workflow: PHP 8.2/8.3/8.4/8.5 × WordPress 7.x and current
       stable; run `composer phpcs` and `composer audit` (plus lint/tests when
       they exist).
