@@ -22,6 +22,8 @@ plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
 - `SECURITY.md` and this changelog.
 - Release packaging helper (`dev/build-release.ps1`) that builds a zip from
   the `cleanup/` folder only.
+- PHPUnit + Brain Monkey test harness with initial config, registry and
+  `hide_admin_bar` tests.
 
 ### Fixed
 

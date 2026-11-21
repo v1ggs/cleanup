@@ -2,6 +2,7 @@
 log
 logs
 dist
+.phpunit.cache
 vendor
 snippets/*
 wordpress/

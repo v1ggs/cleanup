@@ -307,9 +307,13 @@ PHP syntax sniff. The pre-commit hook runs PHPCS offline via `php`;
 
 ## 5. Tests
 
-Test tooling and structure are in `TODO.md`; there is no `composer test` script
-yet. The template and regression table below are the rules for feature tests
-once the tooling exists.
+Tests use **PHPUnit with Brain Monkey**; no WordPress test library or database
+is needed. Run them with `composer test`, and `composer check` runs PHPCS then
+the suite. `phpunit.xml` and `tests/bootstrap.php` define the harness;
+`tests/TestCase.php` starts and stops Brain Monkey for each test. WP functions
+and hooks are mocked, so tests stay fast and offline.
+
+The template and regression table below are the rules for each feature test.
 
 ### Global invariants (run on every suite)
 

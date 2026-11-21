@@ -10,11 +10,14 @@
         "squizlabs/php_codesniffer": "^3.13.6",
         "wp-coding-standards/wpcs": "^3.4.1",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.1",
-        "phpcompatibility/phpcompatibility-wp": "^2.1.8"
+        "phpcompatibility/phpcompatibility-wp": "^2.1.8",
+        "phpunit/phpunit": "^13.4",
+        "brain/monkey": "^2.7"
     },
     "scripts": {
         "phpcs": "phpcs",
-        "check": "@phpcs"
+        "test": "phpunit",
+        "check": ["@phpcs", "@test"]
     },
     "config": {
         "allow-plugins": {
