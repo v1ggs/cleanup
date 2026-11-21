@@ -25,7 +25,6 @@ final class FeaturesTest extends TestCase
             'howdy_text',
             'admin_footer_text',
             'auto_featured_image',
-            'remove_default_taxonomy',
             'dequeue_frontend_jquery',
             'disable_customizer',
             'disable_gutenberg',

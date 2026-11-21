@@ -69,8 +69,6 @@ forgotten:
       `cleanup/includes/features/disable-customizer.php`.
 - [x] Port `disable_gutenberg` in
       `cleanup/includes/features/disable-gutenberg.php` (global styles merged).
-- [x] Port `remove_default_taxonomy` in
-      `cleanup/includes/features/remove-default-taxonomy.php`.
 - [x] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional

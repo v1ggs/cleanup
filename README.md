@@ -44,7 +44,6 @@ return [
     'howdy_text'              => 'Welcome',
     'admin_footer_text'       => 'Site name',
     'auto_featured_image'     => true,
-    'remove_default_taxonomy' => false,  // for new websites only
     'dequeue_frontend_jquery' => true,
     'disable_customizer'      => true,
     'disable_gutenberg'       => true,
@@ -71,7 +70,6 @@ Config resolution:
 | `howdy_text`              | `string`            | Replaces the default "Howdy" greeting in the WordPress toolbar                                |
 | `admin_footer_text`       | `string` or `array` | Replaces the admin footer text; array may contain `text` and `url`                            |
 | `auto_featured_image`     | `bool`              | Sets the first attached image as the featured image on save                                   |
-| `remove_default_taxonomy` | `bool`              | Detaches categories and tags from posts. **For new websites only** (see note below)           |
 | `dequeue_frontend_jquery` | `bool`              | Removes jQuery from the public website; wp-admin keeps it for other plugins                   |
 | `disable_customizer`      | `bool`              | Fully removes the Customizer: core loading, admin UI, direct access and theme-screen links    |
 | `disable_gutenberg`       | `bool`              | Disables the block editor and removes its assets and global styles                            |
@@ -94,9 +92,6 @@ Accepts a string or an array:
 Both values are escaped: `text` with `esc_html()` and `url` with `esc_url()`.
 Links open in a new tab with `rel="noopener"`. An empty string or an empty
 `text` value leaves the default footer unchanged.
-
-> **For new websites only.** `remove_default_taxonomy` changes website structure
-> and can orphan existing terms. Enable it only before content exists.
 
 > **Note:** `disable_customizer` stops core from loading the Customizer, removes
 > the admin menu item, the admin-bar node, direct `customize.php` access, and

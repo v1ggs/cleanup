@@ -39,9 +39,6 @@ Security and recoverability take priority over convenience.
 - **Project configuration prepares features in advance.** A flat config file in
   the custom theme (see §2) enables features for a client site. Configuration
   is trusted developer code, not user input.
-- **Features that change site structure or data** (currently only taxonomy
-  detach) are **new-site-only** — apply them before content exists. They are
-  enabled only from the config file.
 - **Nothing user-supplied is processed.** There is no admin page, no menu, no
   capability check, no nonce, no saved option, no AJAX/REST endpoint and no
   form input. Do not add any of these. If a feature seems to need one, stop and
@@ -390,8 +387,6 @@ swallow child exit codes.
 - `theme.json` is a **theme** file. Never apply it from the plugin.
 - `menus.php` `wp_nav_menu()` calls are **theme template** code — docs only.
 - `wp-config.php` constants are instructions only (see §2).
-- New-site-only features (currently only `remove-default-taxonomy`) are enabled
-  from config and documented as "apply before content exists".
 - Permalinks are a setup step, not a plugin feature — configure them in the
   site's setup script or via WP-CLI, never from this plugin.
 - Keep the classic-editor + CMB2 assumption in mind: Gutenberg may be enabled

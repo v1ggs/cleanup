@@ -24,7 +24,6 @@ require_once __DIR__ . '/features/auto-featured-image.php';
 require_once __DIR__ . '/features/dequeue-frontend-jquery.php';
 require_once __DIR__ . '/features/disable-customizer.php';
 require_once __DIR__ . '/features/disable-gutenberg.php';
-require_once __DIR__ . '/features/remove-default-taxonomy.php';
 
 /**
  * Return the feature registry.
@@ -49,10 +48,6 @@ function features(): array
         'auto_featured_image' => [
             'type' => 'bool',
             'callback' => __NAMESPACE__ . '\\auto_featured_image',
-        ],
-        'remove_default_taxonomy' => [
-            'type' => 'bool',
-            'callback' => __NAMESPACE__ . '\\remove_default_taxonomy',
         ],
         'dequeue_frontend_jquery' => [
             'type' => 'bool',
