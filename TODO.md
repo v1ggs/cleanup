@@ -63,6 +63,8 @@ forgotten:
 - [x] Port `howdy_text` in `cleanup/includes/features/howdy-text.php`.
 - [x] Port `admin_footer_text` in
       `cleanup/includes/features/admin-footer-text.php`.
+- [x] Port `auto_featured_image` in
+      `cleanup/includes/features/auto-featured-image.php`.
 - [ ] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional
