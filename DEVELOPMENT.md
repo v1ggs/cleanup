@@ -424,7 +424,7 @@ sets the registry callback.
 | [x]  | `howdy_text`              | `admin-bar-howdy.php`                   | Greeting + display name, both escaped                       |
 | [x]  | `admin_footer_text`       | `admin-footer.php`                      | Plain text or optional link; both escaped                   |
 | [x]  | `auto_featured_image`     | `featured-image-auto.php`               | Skips autosaves, revisions, existing thumbnails             |
-| [ ]  | `remove_default_taxonomy` | `remove-default-taxonomy.php`           | New-site-only; orphans terms — confirm before enabling      |
+| [x]  | `remove_default_taxonomy` | `remove-default-taxonomy.php`           | New-site only; detaches category and post_tag from posts    |
 | [x]  | `dequeue_frontend_jquery` | `dequeue-jquery.php`                    | Front-end only; admin jQuery untouched for CMB2             |
 | [x]  | `disable_customizer`      | *write new*                             | Submenu, admin-bar node and direct URL guard                |
 | [x]  | `disable_gutenberg`       | `editor-disable.php` + `dequeue-global-styles.php` | Block editor off; styles and global styles removed |
