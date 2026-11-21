@@ -7,6 +7,11 @@ There is **no admin menu, no settings page, no saved options, no public
 endpoints and no front-end output**. With no config file present, the plugin is
 completely inert.
 
+> This project is shared **as is**, mainly for my own use, without support or
+> guarantees. Use it at your own risk. Test on a staging website, keep backups,
+> and review changes before enabling a feature or applying an update. You remain
+> responsible for your own website and for any fork you maintain.
+
 > These switches change how WordPress behaves. If you are not sure what a
 > setting does, leave it out. Nothing here is required for a normal website, and
 > removing the key turns the feature off again.
