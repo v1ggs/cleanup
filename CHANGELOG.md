@@ -3,19 +3,19 @@
 All notable changes to this project are documented here. Versions follow the
 plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
 
-## [Unreleased]
+## [0.1.0] - 2026-11-22
 
 ### Added
 
 - Config loader for a flat, typed theme config file (`cleanup-config.php`),
   with `CLEANUP_CONFIG` constant and `cleanup_defaults` filter fallbacks.
 - Feature registry in `cleanup/includes/features.php`.
-- `hide_admin_bar` — hides the front-end admin bar for everyone.
+- `hide_admin_bar` — hides the WordPress toolbar on the public website.
 - `howdy_text` — replaces the default admin-bar greeting.
 - `admin_footer_text` — replaces the admin footer with text or an optional link.
 - `auto_featured_image` — assigns the first attached image as the featured image.
 - `dequeue_frontend_jquery` — removes front-end jQuery, leaving admin jQuery intact.
-- `disable_customizer` — removes the submenu, admin-bar node and direct access.
+- `disable_customizer` — fully removes the Customizer using core APIs.
 - `disable_gutenberg` — disables the block editor and removes block/global styles.
 - Tracked Git hooks for PHPCS and Conventional Commits.
 - `SECURITY.md` and this changelog.
