@@ -15,8 +15,8 @@ update `DEVELOPMENT.md` if a rule changes.
       `composer audit`.
 - [x] Add a release packaging helper based on `DEVELOPMENT.md §8`:
       `dev/build-release.ps1`.
-- [ ] Add deployment scripting so a published fix can reach client sites
-      quickly.
+- [x] Add deployment scripting: `dev/deploy.ps1` deploys a release zip to a
+      site's plugins directory with a backup.
 - [x] Create the remaining root release files: `SECURITY.md`, `CHANGELOG.md`.
 
 ## PHPCS backlog

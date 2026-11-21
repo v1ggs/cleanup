@@ -25,6 +25,8 @@ plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
 - PHPUnit + Brain Monkey test harness with config, registry and tests for all
   eight features.
 - GitHub Actions CI workflow for PHP 8.2–8.5 running PHPCS, PHPUnit and audit.
+- Deployment helper (`dev/deploy.ps1`) that backs up and replaces the plugin
+  on a WordPress site from a release zip.
 
 ### Fixed
 

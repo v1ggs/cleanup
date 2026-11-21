@@ -107,7 +107,10 @@ portfolio. These are agent-facing rules — apply them on every change.
   must pass once they exist. `composer audit` is a separate, network-dependent
   check.
 - **Fast fix path.** Keep releases versioned so a fix can be tagged and
-  distributed quickly. `SECURITY.md` gives reporters a private channel.
+  distributed quickly. `dev/deploy.ps1` deploys a release zip to a site's
+  `wp-content/plugins/cleanup` directory after backing up the old copy; it
+  never stores client paths or credentials. `SECURITY.md` gives reporters a
+  private channel.
 
 ## 1. Stack and layout
 
@@ -574,6 +577,8 @@ whether anything was pushed.
   root docs, `dev/`, `snippets/`, `tests/`, WordPress core, `vendor/` or
   Composer files. Keep `README.md`, `CHANGELOG.md` and `SECURITY.md` on GitHub
   only.
+- Deploy with `dev/deploy.ps1 -SitePath <path>` (add `-DryRun` first). It
+  backs up the existing plugin folder and extracts the latest zip from `dist/`.
 - Keep the plugin header `Version:` in sync with the tag. Do not bump by hand
   outside a release.
 - `SECURITY.md` documents how to report a vulnerability privately.
