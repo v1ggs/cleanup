@@ -36,7 +36,9 @@ directory.
 7. Update root `README.md` in **both** places: add the new key to the PHP config
    example (with a value of the correct type) and to the feature table (with its
    value type, a one-line description and any "new websites only" warning). The
-   example and the table must always contain the same keys.
+   example and the table must always contain the same keys. Keep documentation
+   factual: no conversational remarks, personal preferences, rejected
+   alternatives or "we considered / we could" asides in docs or DocBlocks.
 8. Once the feature is verified and documented, remove the processed file from
    `snippets/` and delete its row from the manifest in `DEVELOPMENT.md §6`.
    That keeps `snippets/` an inbox of unprocessed ideas, not an archive.

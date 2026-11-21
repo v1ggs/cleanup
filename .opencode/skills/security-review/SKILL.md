@@ -12,6 +12,10 @@ truth; read them first.
 ## Workflow
 
 1. Inspect the working-tree diff, or the whole plugin if there is no git repo.
+   Also check documentation files (README, DEVELOPMENT, CHANGELOG, skills and
+   DocBlocks) for conversational asides, personal preferences, rejected
+   alternatives or "we considered / we could" remarks. Documentation describes
+   the plugin as it is, not how we got here; report such lines as findings.
 2. Check the design invariants: no admin menu, no settings page, no saved
    options, no AJAX/REST endpoints, no front-end output or fingerprint.
 3. Check every shipped PHP file has an `ABSPATH` guard, a `Cleanup` namespace,
