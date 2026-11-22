@@ -79,6 +79,8 @@ forgotten:
       `cleanup/includes/features/disable-oembed.php`.
 - [x] Port `disable_resource_hints` in
       `cleanup/includes/features/disable-resource-hints.php`.
+- [x] Port `disable_emojis` in
+      `cleanup/includes/features/disable-emojis.php`.
 - [x] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional

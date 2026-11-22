@@ -29,6 +29,7 @@ require_once __DIR__ . '/features/restrict-rest-users.php';
 require_once __DIR__ . '/features/head-cleanup.php';
 require_once __DIR__ . '/features/disable-oembed.php';
 require_once __DIR__ . '/features/disable-resource-hints.php';
+require_once __DIR__ . '/features/disable-emojis.php';
 
 /**
  * Return the feature registry.
@@ -85,6 +86,10 @@ function features(): array
         'disable_resource_hints' => [
             'type' => 'bool',
             'callback' => __NAMESPACE__ . '\\disable_resource_hints',
+        ],
+        'disable_emojis' => [
+            'type' => 'bool',
+            'callback' => __NAMESPACE__ . '\\disable_emojis',
         ],
     ];
 }

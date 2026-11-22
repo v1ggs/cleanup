@@ -33,6 +33,7 @@ final class FeaturesTest extends TestCase
             'head_cleanup',
             'disable_oembed',
             'disable_resource_hints',
+            'disable_emojis',
         ];
 
         $features = \Cleanup\features();
