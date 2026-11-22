@@ -58,6 +58,7 @@ return [
     'disable_oembed'          => true,
     'disable_resource_hints'  => true,
     'disable_emojis'          => true,
+    'disable_comments'        => true,
 ];
 ```
 
@@ -90,6 +91,7 @@ Config resolution:
 | `disable_oembed`          | `bool`              | Removes oEmbed discovery links and host JavaScript from the head                              |
 | `disable_resource_hints`  | `bool`              | Removes DNS prefetch and preconnect hints from the front end, login and Customizer            |
 | `disable_emojis`          | `bool`              | Removes emoji scripts and styles and stops emoji conversion in feeds, comments and mail       |
+| `disable_comments`        | `bool`              | Closes new comments and pingbacks through the core `comments_open` and `pings_open` filters   |
 
 ### `admin_footer_text`
 
@@ -109,6 +111,9 @@ Accepts a string or an array:
 Both values are escaped: `text` with `esc_html()` and `url` with `esc_url()`.
 Links open in a new tab with `rel="noopener"`. An empty string or an empty
 `text` value leaves the default footer unchanged.
+
+> `disable_comments` closes new discussion. Comments already stored in the
+> database remain visible.
 
 > `disable_emojis` also removes the core filters that convert emoji in content
 > feeds, comment RSS and mail.

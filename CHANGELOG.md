@@ -15,6 +15,7 @@ plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
 - `disable_oembed` — removes oEmbed discovery links and host JavaScript.
 - `disable_resource_hints` — removes core DNS prefetch and preconnect hints.
 - `disable_emojis` — removes emoji scripts, styles and conversion filters.
+- `disable_comments` — closes new comments and pingbacks.
 
 ## [0.1.0] - 2026-11-22
 

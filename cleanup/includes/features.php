@@ -30,6 +30,7 @@ require_once __DIR__ . '/features/head-cleanup.php';
 require_once __DIR__ . '/features/disable-oembed.php';
 require_once __DIR__ . '/features/disable-resource-hints.php';
 require_once __DIR__ . '/features/disable-emojis.php';
+require_once __DIR__ . '/features/disable-comments.php';
 
 /**
  * Return the feature registry.
@@ -90,6 +91,10 @@ function features(): array
         'disable_emojis' => [
             'type' => 'bool',
             'callback' => __NAMESPACE__ . '\\disable_emojis',
+        ],
+        'disable_comments' => [
+            'type' => 'bool',
+            'callback' => __NAMESPACE__ . '\\disable_comments',
         ],
     ];
 }
