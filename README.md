@@ -16,7 +16,8 @@ completely inert.
 > setting does, leave it out. Nothing here is required for a normal website, and
 > removing the key turns the feature off again.
 
-Distributed on **GitHub only** — not in the WordPress.org directory.
+Distributed on **GitHub only** — not in the WordPress.org directory. Download
+releases from [GitHub Releases](https://github.com/v1ggs/cleanup/releases/latest).
 
 Built and tested for **classic themes** with the classic editor. Block themes
 and Full Site Editing are out of scope and untested; some features should still
@@ -28,16 +29,19 @@ work, but the Site Editor is not disabled and Customizer availability differs.
 - PHP 8.2+
 - Your own local WordPress installation (this project does not use `wp-env`)
 
-In this repository the web root is `wordpress/` and `wp-config.php` lives in
-the project root, one level above `ABSPATH`. The project root is the WordPress
-plugins directory; the plugin itself is the `cleanup/` folder inside it.
+`main` is the development branch and may contain unreleased changes. The plugin
+header `Version:` matches the last tagged release. Use tags or release zips for
+reproducible installs.
 
 ## Install
 
-1. Copy the `cleanup/` folder into your WordPress plugins directory (or point
-   `WP_PLUGIN_DIR` at this repository root in the project layout).
-2. Activate **Cleanup** in WordPress.
-3. Add a `cleanup-config.php` file to the active theme and return a flat array
+1. Download `cleanup-vX.Y.Z.zip` from the
+   [latest release](https://github.com/v1ggs/cleanup/releases/latest). Do not
+   copy `cleanup/` from `main`: it may contain unreleased changes.
+2. Upload the zip through Plugins → Add New → Upload Plugin, or extract it into
+   `wp-content/plugins/cleanup/`.
+3. Activate **Cleanup** in WordPress.
+4. Add a `cleanup-config.php` file to the active theme and return a flat array
    of the features you want:
 
 ```php
@@ -73,6 +77,14 @@ Config resolution:
   than one source is present;
 - unknown keys are ignored; wrong-typed values fall back to defaults; a
   malformed or missing config means everything stays off.
+
+## Development setup
+
+In this repository the web root is `wordpress/` and `wp-config.php` lives in
+the project root, one level above `ABSPATH`. For local development only, point
+`WP_PLUGIN_DIR` at the repository root; the plugin itself is the `cleanup/`
+folder inside it. Do not use this layout on a client site. Use a release zip on
+every website.
 
 ## Features
 
