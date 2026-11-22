@@ -52,6 +52,7 @@ return [
     'dequeue_frontend_jquery' => true,
     'disable_customizer'      => true,
     'disable_gutenberg'       => true,
+    'disable_xmlrpc'          => true,
 ];
 ```
 
@@ -78,6 +79,7 @@ Config resolution:
 | `dequeue_frontend_jquery` | `bool`              | Removes jQuery from the public website; wp-admin keeps it for other plugins                   |
 | `disable_customizer`      | `bool`              | Fully removes the Customizer: core loading, admin UI, direct access and theme-screen links    |
 | `disable_gutenberg`       | `bool`              | Disables the block editor and removes its assets and global styles                            |
+| `disable_xmlrpc`          | `bool`              | Disables XML-RPC through the core `xmlrpc_enabled` and `xmlrpc_methods` filters               |
 
 ### `admin_footer_text`
 

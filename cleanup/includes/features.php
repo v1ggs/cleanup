@@ -24,6 +24,7 @@ require_once __DIR__ . '/features/auto-featured-image.php';
 require_once __DIR__ . '/features/dequeue-frontend-jquery.php';
 require_once __DIR__ . '/features/disable-customizer.php';
 require_once __DIR__ . '/features/disable-gutenberg.php';
+require_once __DIR__ . '/features/disable-xmlrpc.php';
 
 /**
  * Return the feature registry.
@@ -60,6 +61,10 @@ function features(): array
         'disable_gutenberg' => [
             'type' => 'bool',
             'callback' => __NAMESPACE__ . '\\disable_gutenberg',
+        ],
+        'disable_xmlrpc' => [
+            'type' => 'bool',
+            'callback' => __NAMESPACE__ . '\\disable_xmlrpc',
         ],
     ];
 }

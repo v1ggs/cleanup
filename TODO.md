@@ -10,7 +10,7 @@ update `DEVELOPMENT.md` if a rule changes.
       `tests/bootstrap.php` and `tests/TestCase.php`. No WP test library needed.
 - [x] Add `composer test` and expand `composer check` to run PHPCS + tests.
 - [ ] Add `composer lint` if a separate syntax check becomes useful.
-- [x] Add feature tests for all eight config keys.
+- [x] Add feature tests for all shipped config keys.
 - [x] Add a CI workflow: PHP 8.2/8.3/8.4/8.5; runs `composer check` and
       `composer audit`.
 - [x] Add a release packaging helper based on `DEVELOPMENT.md §8`:
@@ -69,6 +69,8 @@ forgotten:
       `cleanup/includes/features/disable-customizer.php`.
 - [x] Port `disable_gutenberg` in
       `cleanup/includes/features/disable-gutenberg.php` (global styles merged).
+- [x] Port `disable_xmlrpc` in
+      `cleanup/includes/features/disable-xmlrpc.php`.
 - [x] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional

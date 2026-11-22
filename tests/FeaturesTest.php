@@ -28,6 +28,7 @@ final class FeaturesTest extends TestCase
             'dequeue_frontend_jquery',
             'disable_customizer',
             'disable_gutenberg',
+            'disable_xmlrpc',
         ];
 
         $features = \Cleanup\features();

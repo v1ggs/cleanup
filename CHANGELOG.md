@@ -9,6 +9,7 @@ plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
 
 - Linux/macOS equivalents of the release and deployment helpers:
   `dev/build-release.sh` and `dev/deploy.sh`.
+- `disable_xmlrpc` — disables XML-RPC with core filters.
 
 ## [0.1.0] - 2026-11-22
 
