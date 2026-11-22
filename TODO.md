@@ -83,6 +83,8 @@ forgotten:
       `cleanup/includes/features/disable-emojis.php`.
 - [x] Port `disable_comments` in
       `cleanup/includes/features/disable-comments.php`.
+- [x] Add core block supports and classic theme styles dequeues to
+      `disable_gutenberg`.
 - [x] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional

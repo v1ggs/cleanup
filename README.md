@@ -84,7 +84,7 @@ Config resolution:
 | `auto_featured_image`     | `bool`              | Sets the first attached image as the featured image on save                                   |
 | `dequeue_frontend_jquery` | `bool`              | Removes jQuery from the public website; wp-admin keeps it for other plugins                   |
 | `disable_customizer`      | `bool`              | Fully removes the Customizer: core loading, admin UI, direct access and theme-screen links    |
-| `disable_gutenberg`       | `bool`              | Disables the block editor and removes its assets and global styles                            |
+| `disable_gutenberg`       | `bool`              | Disables the block editor and removes block, global and classic-theme styles                   |
 | `disable_xmlrpc`          | `bool`              | Disables XML-RPC through the core `xmlrpc_enabled` and `xmlrpc_methods` filters               |
 | `restrict_rest_users`     | `bool`              | Removes the public user routes from REST for logged-out requests                             |
 | `head_cleanup`            | `bool`              | Removes generated version, shortlink, RSD, feed and REST discovery metadata                   |

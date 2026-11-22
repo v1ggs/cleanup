@@ -52,4 +52,6 @@ function disable_gutenberg_assets(): void
     wp_dequeue_style('wp-block-library');
     wp_dequeue_style('wp-block-library-theme');
     wp_dequeue_style('global-styles');
+    wp_dequeue_style('core-block-supports');
+    wp_dequeue_style('classic-theme-styles');
 }

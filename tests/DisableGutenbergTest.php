@@ -59,6 +59,8 @@ final class DisableGutenbergTest extends TestCase
         expect('wp_dequeue_style')->once()->with('wp-block-library');
         expect('wp_dequeue_style')->once()->with('wp-block-library-theme');
         expect('wp_dequeue_style')->once()->with('global-styles');
+        expect('wp_dequeue_style')->once()->with('core-block-supports');
+        expect('wp_dequeue_style')->once()->with('classic-theme-styles');
 
         \Cleanup\disable_gutenberg_assets();
     }

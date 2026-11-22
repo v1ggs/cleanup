@@ -16,6 +16,7 @@ plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
 - `disable_resource_hints` — removes core DNS prefetch and preconnect hints.
 - `disable_emojis` — removes emoji scripts, styles and conversion filters.
 - `disable_comments` — closes new comments and pingbacks.
+- `disable_gutenberg` — also dequeues core block supports and classic theme styles.
 
 ## [0.1.0] - 2026-11-22
 
