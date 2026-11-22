@@ -4,7 +4,7 @@
  * Plugin Name:       Cleanup
  * Plugin URI:        https://github.com/v1ggs/cleanup
  * Description:       Config-gated WordPress cleanup for custom sites.
- * Version:           0.1.0
+ * Version:           1.0.0
  * Author:            v1ggs
  * Author URI:        https://github.com/v1ggs
  * License:           MIT

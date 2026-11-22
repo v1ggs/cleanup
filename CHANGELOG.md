@@ -3,7 +3,7 @@
 All notable changes to this project are documented here. Versions follow the
 plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
 
-## [Unreleased]
+## [1.0.0] - 2026-11-22
 
 ### Added
 
