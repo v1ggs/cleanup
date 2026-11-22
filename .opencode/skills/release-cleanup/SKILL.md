@@ -19,19 +19,28 @@ read it before acting.
    Conventional Commit subjects as the source.
 5. Re-run `composer check`. Run `composer audit` separately if the network is
    available.
-6. Run `composer install --no-dev`, then build the zip with:
+6. Run `composer install --no-dev`, then build the zip with the helper for the
+   current OS:
 
    ```powershell
+   # Windows
    powershell -ExecutionPolicy Bypass -File .\dev\build-release.ps1
    ```
 
-   The helper stages only the `cleanup/` plugin folder and writes
+   ```sh
+   # Linux/macOS
+   bash dev/build-release.sh
+   ```
+
+   Both stage only the `cleanup/` plugin folder and write
    `dist/cleanup-vX.Y.Z.zip`.
 7. Verify the zip contains only `cleanup.php`, `includes/`, `LICENSE` and
    `THIRD-PARTY-NOTICES.md` — no docs, dev tools, snippets or WordPress core.
 8. Report the proposed tag, changelog and zip contents. **Ask for explicit
    approval before committing, tagging or pushing.** Never push without it.
-9. After approval: commit, tag `vX.Y.Z`, `git push --follow-tags`, then create
-   the GitHub Release with notes and the zip attached.
+9. After approval: commit, tag `vX.Y.Z`, then push the commit and the tag
+   explicitly (`git push origin main` and `git push origin vX.Y.Z`).
+   `--follow-tags` only pushes annotated tags; our tags are lightweight.
+   Then create the GitHub Release with notes and the zip attached.
 
 Report exactly what was committed, tagged and pushed.

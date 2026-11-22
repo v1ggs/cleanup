@@ -3,6 +3,13 @@
 All notable changes to this project are documented here. Versions follow the
 plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
 
+## [Unreleased]
+
+### Added
+
+- Linux/macOS equivalents of the release and deployment helpers:
+  `dev/build-release.sh` and `dev/deploy.sh`.
+
 ## [0.1.0] - 2026-11-22
 
 ### Added

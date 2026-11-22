@@ -104,10 +104,10 @@ portfolio. These are agent-facing rules — apply them on every change.
   must pass once they exist. `composer audit` is a separate, network-dependent
   check.
 - **Fast fix path.** Keep releases versioned so a fix can be tagged and
-  distributed quickly. `dev/deploy.ps1` deploys a release zip to a site's
-  `wp-content/plugins/cleanup` directory after backing up the old copy; it
-  never stores client paths or credentials. `SECURITY.md` gives reporters a
-  private channel.
+  distributed quickly. `dev/deploy.ps1` (Windows) and `dev/deploy.sh`
+  (Linux/macOS) deploy a release zip to a site's `wp-content/plugins/cleanup`
+  directory after backing up the old copy; neither stores client paths or
+  credentials. `SECURITY.md` gives reporters a private channel.
 
 ## 1. Stack and layout
 
@@ -568,19 +568,27 @@ whether anything was pushed.
 - Use the `release-cleanup` skill for the full workflow.
 - GitHub Releases only: tag `v*.*.*`, attach a built zip, no WP.org SVN.
 - Build the zip from the **`cleanup/` plugin folder**, not the repository root.
-  Run `composer install --no-dev` first, then run:
+  Run `composer install --no-dev` first, then use the helper for your OS:
 
   ```powershell
+  # Windows
   powershell -ExecutionPolicy Bypass -File .\dev\build-release.ps1
   ```
 
-  The helper stages only `cleanup.php`, `includes/`, `LICENSE` and
-  `THIRD-PARTY-NOTICES.md`, then writes `dist/cleanup-vX.Y.Z.zip`. Never include
+  ```sh
+  # Linux/macOS
+  bash dev/build-release.sh
+  ```
+
+  Both stage only `cleanup.php`, `includes/`, `LICENSE` and
+  `THIRD-PARTY-NOTICES.md`, then write `dist/cleanup-vX.Y.Z.zip`. Never include
   root docs, `dev/`, `snippets/`, `tests/`, WordPress core, `vendor/` or
   Composer files. Keep `README.md`, `CHANGELOG.md` and `SECURITY.md` on GitHub
   only.
-- Deploy with `dev/deploy.ps1 -SitePath <path>` (add `-DryRun` first). It
-  backs up the existing plugin folder and extracts the latest zip from `dist/`.
+- Deploy with `dev/deploy.ps1 -SitePath <path>` on Windows or
+  `bash dev/deploy.sh <site-path>` on Linux/macOS (add `-DryRun` / `--dry-run`
+  first). Both back up the existing plugin folder and extract the latest zip
+  from `dist/`.
 - Keep the plugin header `Version:` in sync with the tag. Do not bump by hand
   outside a release.
 - `SECURITY.md` documents how to report a vulnerability privately.
