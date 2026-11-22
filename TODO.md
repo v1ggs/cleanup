@@ -90,6 +90,10 @@ forgotten:
 ## Later / optional
 
 - [ ] Multisite / network-admin behaviour.
-- [ ] Translation support, only if UI strings ever appear.
-- [ ] Public asset URLs or a server alias, only if the plugin ever needs
-      shipped assets.
+- [ ] Add a code-only security scan. The plugin has no runtime dependencies,
+      so dependency scanning adds little; no PR-triggered scans and no repo
+      secrets. Options: GitHub AI Scan for repositories (native, public
+      preview, consumes AI credits); Snyk Code only (needs a token; disable
+      Open Source, fix PRs and PR tests); Semgrep CE (no token or account,
+      PHP community rules, push/schedule, advisory). Keep `composer check`,
+      `composer audit` and the `security-review` skill as release gates.
