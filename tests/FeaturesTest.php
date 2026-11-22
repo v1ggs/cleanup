@@ -32,6 +32,7 @@ final class FeaturesTest extends TestCase
             'restrict_rest_users',
             'head_cleanup',
             'disable_oembed',
+            'disable_resource_hints',
         ];
 
         $features = \Cleanup\features();

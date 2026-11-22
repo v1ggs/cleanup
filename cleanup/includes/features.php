@@ -28,6 +28,7 @@ require_once __DIR__ . '/features/disable-xmlrpc.php';
 require_once __DIR__ . '/features/restrict-rest-users.php';
 require_once __DIR__ . '/features/head-cleanup.php';
 require_once __DIR__ . '/features/disable-oembed.php';
+require_once __DIR__ . '/features/disable-resource-hints.php';
 
 /**
  * Return the feature registry.
@@ -80,6 +81,10 @@ function features(): array
         'disable_oembed' => [
             'type' => 'bool',
             'callback' => __NAMESPACE__ . '\\disable_oembed',
+        ],
+        'disable_resource_hints' => [
+            'type' => 'bool',
+            'callback' => __NAMESPACE__ . '\\disable_resource_hints',
         ],
     ];
 }

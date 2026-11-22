@@ -56,6 +56,7 @@ return [
     'restrict_rest_users'     => true,
     'head_cleanup'            => true,
     'disable_oembed'          => true,
+    'disable_resource_hints'  => true,
 ];
 ```
 
@@ -86,6 +87,7 @@ Config resolution:
 | `restrict_rest_users`     | `bool`              | Removes the public user routes from REST for logged-out requests                             |
 | `head_cleanup`            | `bool`              | Removes generated version, shortlink, RSD, feed and REST discovery metadata                   |
 | `disable_oembed`          | `bool`              | Removes oEmbed discovery links and host JavaScript from the head                              |
+| `disable_resource_hints`  | `bool`              | Removes DNS prefetch and preconnect hints from the front end, login and Customizer            |
 
 ### `admin_footer_text`
 
@@ -105,6 +107,9 @@ Accepts a string or an array:
 Both values are escaped: `text` with `esc_html()` and `url` with `esc_url()`.
 Links open in a new tab with `rel="noopener"`. An empty string or an empty
 `text` value leaves the default footer unchanged.
+
+> `disable_resource_hints` removes every hint printed through the core hook,
+> including hints added by themes or plugins with the `wp_resource_hints` filter.
 
 > `disable_oembed` stops URLs from auto-embedding in the editor. Embeds already
 > stored in content keep working.

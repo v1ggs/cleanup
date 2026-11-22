@@ -13,6 +13,7 @@ plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
 - `restrict_rest_users` — removes public user routes for logged-out requests.
 - `head_cleanup` — removes generated metadata from the head and HTTP headers.
 - `disable_oembed` — removes oEmbed discovery links and host JavaScript.
+- `disable_resource_hints` — removes core DNS prefetch and preconnect hints.
 
 ## [0.1.0] - 2026-11-22
 
