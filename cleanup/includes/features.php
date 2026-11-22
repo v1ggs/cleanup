@@ -26,6 +26,7 @@ require_once __DIR__ . '/features/disable-customizer.php';
 require_once __DIR__ . '/features/disable-gutenberg.php';
 require_once __DIR__ . '/features/disable-xmlrpc.php';
 require_once __DIR__ . '/features/restrict-rest-users.php';
+require_once __DIR__ . '/features/head-cleanup.php';
 
 /**
  * Return the feature registry.
@@ -70,6 +71,10 @@ function features(): array
         'restrict_rest_users' => [
             'type' => 'bool',
             'callback' => __NAMESPACE__ . '\\restrict_rest_users',
+        ],
+        'head_cleanup' => [
+            'type' => 'bool',
+            'callback' => __NAMESPACE__ . '\\head_cleanup',
         ],
     ];
 }

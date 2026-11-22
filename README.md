@@ -54,6 +54,7 @@ return [
     'disable_gutenberg'       => true,
     'disable_xmlrpc'          => true,
     'restrict_rest_users'     => true,
+    'head_cleanup'            => true,
 ];
 ```
 
@@ -82,6 +83,7 @@ Config resolution:
 | `disable_gutenberg`       | `bool`              | Disables the block editor and removes its assets and global styles                            |
 | `disable_xmlrpc`          | `bool`              | Disables XML-RPC through the core `xmlrpc_enabled` and `xmlrpc_methods` filters               |
 | `restrict_rest_users`     | `bool`              | Removes the public user routes from REST for logged-out requests                             |
+| `head_cleanup`            | `bool`              | Removes generated version, shortlink, RSD, feed and REST discovery metadata                   |
 
 ### `admin_footer_text`
 
@@ -101,6 +103,10 @@ Accepts a string or an array:
 Both values are escaped: `text` with `esc_html()` and `url` with `esc_url()`.
 Links open in a new tab with `rel="noopener"`. An empty string or an empty
 `text` value leaves the default footer unchanged.
+
+> `head_cleanup` removes the WordPress version, shortlink, RSD, feed and REST
+> discovery links from the head, plus the shortlink and REST HTTP headers. Feeds
+> and the REST API themselves stay enabled.
 
 > `restrict_rest_users` removes the public user collection and single-user
 > routes for logged-out requests only. The current-user route and all admin and

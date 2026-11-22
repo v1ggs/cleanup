@@ -11,6 +11,7 @@ plugin header `Version:` and the GitHub Release tag (`vX.Y.Z`).
   `dev/build-release.sh` and `dev/deploy.sh`.
 - `disable_xmlrpc` — disables XML-RPC with core filters.
 - `restrict_rest_users` — removes public user routes for logged-out requests.
+- `head_cleanup` — removes generated metadata from the head and HTTP headers.
 
 ## [0.1.0] - 2026-11-22
 

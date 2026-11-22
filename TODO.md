@@ -73,6 +73,8 @@ forgotten:
       `cleanup/includes/features/disable-xmlrpc.php`.
 - [x] Port `restrict_rest_users` in
       `cleanup/includes/features/restrict-rest-users.php`.
+- [x] Port `head_cleanup` in
+      `cleanup/includes/features/head-cleanup.php`.
 - [x] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional
