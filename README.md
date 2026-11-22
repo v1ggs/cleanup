@@ -53,6 +53,7 @@ return [
     'disable_customizer'      => true,
     'disable_gutenberg'       => true,
     'disable_xmlrpc'          => true,
+    'restrict_rest_users'     => true,
 ];
 ```
 
@@ -80,6 +81,7 @@ Config resolution:
 | `disable_customizer`      | `bool`              | Fully removes the Customizer: core loading, admin UI, direct access and theme-screen links    |
 | `disable_gutenberg`       | `bool`              | Disables the block editor and removes its assets and global styles                            |
 | `disable_xmlrpc`          | `bool`              | Disables XML-RPC through the core `xmlrpc_enabled` and `xmlrpc_methods` filters               |
+| `restrict_rest_users`     | `bool`              | Removes the public user routes from REST for logged-out requests                             |
 
 ### `admin_footer_text`
 
@@ -99,6 +101,10 @@ Accepts a string or an array:
 Both values are escaped: `text` with `esc_html()` and `url` with `esc_url()`.
 Links open in a new tab with `rel="noopener"`. An empty string or an empty
 `text` value leaves the default footer unchanged.
+
+> `restrict_rest_users` removes the public user collection and single-user
+> routes for logged-out requests only. The current-user route and all admin and
+> editor REST requests are unchanged.
 
 > **Note:** `disable_customizer` stops core from loading the Customizer, removes
 > the admin menu item, the admin-bar node, direct `customize.php` access, and

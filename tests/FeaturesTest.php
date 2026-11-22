@@ -29,6 +29,7 @@ final class FeaturesTest extends TestCase
             'disable_customizer',
             'disable_gutenberg',
             'disable_xmlrpc',
+            'restrict_rest_users',
         ];
 
         $features = \Cleanup\features();

@@ -25,6 +25,7 @@ require_once __DIR__ . '/features/dequeue-frontend-jquery.php';
 require_once __DIR__ . '/features/disable-customizer.php';
 require_once __DIR__ . '/features/disable-gutenberg.php';
 require_once __DIR__ . '/features/disable-xmlrpc.php';
+require_once __DIR__ . '/features/restrict-rest-users.php';
 
 /**
  * Return the feature registry.
@@ -65,6 +66,10 @@ function features(): array
         'disable_xmlrpc' => [
             'type' => 'bool',
             'callback' => __NAMESPACE__ . '\\disable_xmlrpc',
+        ],
+        'restrict_rest_users' => [
+            'type' => 'bool',
+            'callback' => __NAMESPACE__ . '\\restrict_rest_users',
         ],
     ];
 }
