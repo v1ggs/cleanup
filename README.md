@@ -121,8 +121,9 @@ Links open in a new tab with `rel="noopener"`. An empty string or an empty
 > `disable_resource_hints` removes every hint printed through the core hook,
 > including hints added by themes or plugins with the `wp_resource_hints` filter.
 
-> `disable_oembed` stops URLs from auto-embedding in the editor. Embeds already
-> stored in content keep working.
+> `disable_oembed` removes the discovery links that let other sites embed this
+> site's posts, and the host script used by those embeds. The oEmbed REST route
+> and this site's ability to embed other providers' content are unchanged.
 
 > `head_cleanup` removes the WordPress version, shortlink, RSD, feed and REST
 > discovery links from the head, plus the shortlink and REST HTTP headers. Feeds
