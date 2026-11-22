@@ -27,6 +27,7 @@ require_once __DIR__ . '/features/disable-gutenberg.php';
 require_once __DIR__ . '/features/disable-xmlrpc.php';
 require_once __DIR__ . '/features/restrict-rest-users.php';
 require_once __DIR__ . '/features/head-cleanup.php';
+require_once __DIR__ . '/features/disable-oembed.php';
 
 /**
  * Return the feature registry.
@@ -75,6 +76,10 @@ function features(): array
         'head_cleanup' => [
             'type' => 'bool',
             'callback' => __NAMESPACE__ . '\\head_cleanup',
+        ],
+        'disable_oembed' => [
+            'type' => 'bool',
+            'callback' => __NAMESPACE__ . '\\disable_oembed',
         ],
     ];
 }

@@ -31,6 +31,7 @@ final class FeaturesTest extends TestCase
             'disable_xmlrpc',
             'restrict_rest_users',
             'head_cleanup',
+            'disable_oembed',
         ];
 
         $features = \Cleanup\features();

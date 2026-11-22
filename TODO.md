@@ -75,6 +75,8 @@ forgotten:
       `cleanup/includes/features/restrict-rest-users.php`.
 - [x] Port `head_cleanup` in
       `cleanup/includes/features/head-cleanup.php`.
+- [x] Port `disable_oembed` in
+      `cleanup/includes/features/disable-oembed.php`.
 - [x] Confirm the test structure once PHPUnit is set up.
 
 ## Later / optional

@@ -55,6 +55,7 @@ return [
     'disable_xmlrpc'          => true,
     'restrict_rest_users'     => true,
     'head_cleanup'            => true,
+    'disable_oembed'          => true,
 ];
 ```
 
@@ -84,6 +85,7 @@ Config resolution:
 | `disable_xmlrpc`          | `bool`              | Disables XML-RPC through the core `xmlrpc_enabled` and `xmlrpc_methods` filters               |
 | `restrict_rest_users`     | `bool`              | Removes the public user routes from REST for logged-out requests                             |
 | `head_cleanup`            | `bool`              | Removes generated version, shortlink, RSD, feed and REST discovery metadata                   |
+| `disable_oembed`          | `bool`              | Removes oEmbed discovery links and host JavaScript from the head                              |
 
 ### `admin_footer_text`
 
@@ -103,6 +105,9 @@ Accepts a string or an array:
 Both values are escaped: `text` with `esc_html()` and `url` with `esc_url()`.
 Links open in a new tab with `rel="noopener"`. An empty string or an empty
 `text` value leaves the default footer unchanged.
+
+> `disable_oembed` stops URLs from auto-embedding in the editor. Embeds already
+> stored in content keep working.
 
 > `head_cleanup` removes the WordPress version, shortlink, RSD, feed and REST
 > discovery links from the head, plus the shortlink and REST HTTP headers. Feeds
